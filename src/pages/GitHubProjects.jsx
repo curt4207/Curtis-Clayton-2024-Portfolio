@@ -1,19 +1,17 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
-const GitHubProjects = ({username}) => {
-  // State to hold the repositories
 
+const GitHubProjects = ({ username }) => {
+  // State to hold the repositories
   const [repos, setRepos] = useState([]);
   // State to handle loading state
-
   const [loading, setLoading] = useState(true);
   // State to handle errors
   const [error, setError] = useState(null);
+  // State to hold search query
+  const [searchQuery, setSearchQuery] = useState("");
 
   // useEffect hook to fetch data when component mounts
-
-  // Function to fetch GitHub repositories
   useEffect(() => {
     const fetchRepos = async () => {
       try {
@@ -38,12 +36,25 @@ const GitHubProjects = ({username}) => {
   // Handle error state
   if (error) return <p>Error: {error}</p>;
 
-  // Render the repositories
+  // Filtered repositories based on search query
+  const filteredRepos = repos.filter((repo) =>
+    repo.name.toLowerCase().includes(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">GitHub Repositories for {username}</h2>
+      <h2 className="text-2xl font-bold mb-4">
+        GitHub Repositories for {username}
+      </h2>
+      <input
+        type="text"
+        placeholder="Search Repositories"
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="mb-4 p-2 border rounded-lg w-full"
+      />
       <ul>
-        {repos.map((repo) => (
+        {filteredRepos.map((repo) => (
           <li key={repo.id} className="mb-4 p-4 border rounded-lg shadow-md">
             <a
               href={repo.html_url}

@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+
 function Navbar() {
   return (
     <header>
@@ -35,6 +36,7 @@ function Navbar() {
         >
           GitHub Projects
         </NavLink>
+      
       </nav>
     </header>
   );

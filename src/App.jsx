@@ -14,7 +14,7 @@ import GitHubProjects from "./pages/GitHubProjects"
           <Route path="/about" element={<About />}/>
           <Route path="/projects" element={<Projects />}/>
           <Route path="/contact" element={<Contact />}/>
-          <Route path="/githubprojects" element={<GitHubProjects />}/>
+          <Route path="/githubprojects" element={<GitHubProjects username="curt4207"  />}/>
         </Routes>
       </Router>
     </main>

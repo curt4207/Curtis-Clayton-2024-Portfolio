@@ -6,7 +6,7 @@ const InfoBox = ({text, link, btnText}) => (
   <p className='font-medium sm:text-xl text-center'>
   {text}
   </p>
-  <Link to={link} className=" text-sm neo-brutalism-white neo-btn">{btnText}
+  <Link to={link} className="text-sm neo-brutalism-white neo-btn">{btnText}
   <img src={arrow} className="w-4 h-4 object-contain "/></Link>
   </div>
 )
@@ -17,19 +17,19 @@ const renderContent = {
     A frontend developer</h1>
   ),
   2: (
-    <InfoBox text="Apprentice Developer"
+    <InfoBox text="Apprentice Developer Learn more about me"
     link="/about"
     btnText="Learn more" />
   ),
   3: (
     <InfoBox text="Working on multiple side projects"
     link="/projects"
-    btnText="Learn more" />
+    btnText="in progress" />
   ),
   4: (
     <InfoBox text="My GitHub Projects"
     link="/githubprojects"
-    btnText="Learn more" />
+    btnText=" Github projects" className=""/>
   ),
 }
 

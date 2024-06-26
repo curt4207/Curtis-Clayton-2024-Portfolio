@@ -42,7 +42,7 @@ const GitHubProjects = ({ username }) => {
   );
 
   return (
-    <div className="container mx-auto p-4">
+    <div className="container mt-10 mx-auto p-4">
       <h2 className="text-2xl font-bold mb-4">
         GitHub Repositories for {username}
       </h2>

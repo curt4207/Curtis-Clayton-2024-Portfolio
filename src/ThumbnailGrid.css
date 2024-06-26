@@ -1,0 +1,31 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  .thumbnail {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .thumbnail iframe {
+    width: 100%;
+    height: 200px; /* Adjust the height as needed */
+    border: 0;
+  }
+  
+  .thumbnail-title {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  
